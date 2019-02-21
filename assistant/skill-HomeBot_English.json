@@ -1,0 +1,169 @@
+{
+  "name": "HomeBot_English",
+  "intents": [
+    {
+      "intent": "Lights_Off",
+      "examples": [
+        {
+          "text": "Turn of the lights"
+        },
+        {
+          "text": "Shut down the lights"
+        },
+        {
+          "text": "Cut off the lights"
+        },
+        {
+          "text": "Lights off"
+        },
+        {
+          "text": "Turn the lights off"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Lights_on",
+      "examples": [
+        {
+          "text": "Turn on the lights"
+        },
+        {
+          "text": "Light on"
+        },
+        {
+          "text": "Need some light here"
+        },
+        {
+          "text": "Its to dark here"
+        },
+        {
+          "text": "Give me some lights"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "lights",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "lights",
+          "synonyms": [
+            "led",
+            "light"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ligths on. Have fun =D"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Lights_on",
+      "dialog_node": "node_1_1550692872274",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1550692898680"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Lights off. Cya ;D"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Lights_Off",
+      "dialog_node": "node_2_1550692898680",
+      "previous_sibling": "node_1_1550692872274"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "c5de7f71-874e-4a83-84f9-52894467ba02",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
