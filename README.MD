@@ -6,7 +6,7 @@ Dependencies:
     arduino
 
 Conect your arduino in the USB and go to ts-apistandart to use the follow comands:
-    npm i
+    npm i<br>
     npm run compile
     npm start
 
