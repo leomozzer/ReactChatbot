@@ -19,6 +19,6 @@ Open a new terminal and go to /chat-bot and use:
     npm i
     yarn start
 
-I made a deploy in firebase functions that you can all access. In /Assistant is the json that you can use as an example to IBM Watson Assistant Skills. You can create more entities to make your Arduino and your Bot more advanced
+In /Assistant is the json that you can use as an example to IBM Watson Assistant Skills. You can create more entities to make your Arduino and your Bot more advanced
 
-In /functions you can see the index.js that I used to call the Watson Assistant API.
+I made a deploy in firebase functions that you can all access, when you doit change your plan to blaze. In /functions you can see the index.js that I used to call the Watson Assistant API.
