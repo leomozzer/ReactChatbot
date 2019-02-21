@@ -6,13 +6,15 @@ Dependencies:
     arduino
 
 Conect your arduino in the USB and go to ts-apistandart to use the follow comands:
-    npm i<br>
+
+    npm i
     npm run compile
     npm start
 
     You can check if is running using http://localhost:3500/central?turn=on
 
-Open a new terminal and go to /chat-bot and use
+Open a new terminal and go to /chat-bot and use:
+
     npm i
     yarn start
 
