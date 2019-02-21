@@ -1,4 +1,4 @@
-##Control an Arduino with Watson Assistant
+#Control an Arduino with Watson Assistant
 
 Dependencies:
     yarn
