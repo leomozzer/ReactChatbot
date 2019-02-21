@@ -1,6 +1,10 @@
 <h1>Control an Arduino with Watson Assistant</h1>
 
-Dependencies: yarn nodejs Arduino
+Dependencies: 
+    
+    yarn 
+    nodejs 
+    Arduino
 
 Connect your Arduino in the USB and go to ts-apistandart to use the following commands:
 
