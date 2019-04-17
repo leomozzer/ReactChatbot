@@ -5,7 +5,9 @@ Dependencies:
     yarn 
     nodejs 
     Arduino
+    Firmata
 
+The Standart Firmata must be running in the Arduino
 Connect your Arduino in the USB and go to ts-apistandart to use the following commands:
 
     npm i
@@ -16,8 +18,7 @@ Connect your Arduino in the USB and go to ts-apistandart to use the following co
 
 Open a new terminal and go to /chat-bot and use:
 
-    npm i
-    yarn start
+    npm i/yarn start
 
 In /Assistant is the json that you can use as an example to IBM Watson Assistant Skills. You can create more entities to make your Arduino and your Bot more advanced
 
