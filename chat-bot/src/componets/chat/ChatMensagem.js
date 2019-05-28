@@ -46,7 +46,7 @@ class ChatMensagem extends Component {
             <div className='chat-mensagem'>
                 <br/>
                 <InputGroup>
-                    <Input onKeyDown={this.inputEnviatexto} placeholder='Digite sua mensagem'/>
+                    <Input onKeyDown={this.inputEnviatexto} placeholder='Ex: Desliga as luzes da sala'/>
                     <InputGroupAddon addonType='append'>
                         <Button onClick={this.botao_estado}>
                             Enviar
