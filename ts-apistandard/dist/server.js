@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = require("./app");
-let port = process.env.PORT || '3500';
+//importado app do arquivo app.ts
+let port = '3500';
+//declarado qual a porta em que o server irá rodar
 app_1.default.app.listen(port, function () {
-    console.log(`server running in" + ${port}`);
+    //o aplicativo inicia um servidor e "escuta" a porta 3500
+    console.log(`O server está rodando na porta ${port}`);
 });

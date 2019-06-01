@@ -1,0 +1,56 @@
+.chat-conteudo{
+    display: grid;
+    grid-template-rows: 80px auto 50px;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+    background-color: rgb(236, 244, 245)
+}
+.chat-header{
+    text-align: center;
+}
+.chat-conversa{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-flow: row;
+    font-size: medium;
+    letter-spacing: 0.1px;
+}
+.chat-conversa::-webkit-scrollbar{
+    width: 5px;
+}
+.chat-conversa::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgb(141, 138, 138);
+}
+.chat-mensagem{
+    width: 100%; 
+}
+.user{
+    margin-left: 60%;
+}
+.user-message{
+    float: right;
+    text-align: end;
+}
+.bot{
+    float: left;
+    width: 100%;
+    margin-left: 1%;
+}
+.bot-message{
+    text-align: initial;
+    float: left;
+    max-width: 500px;
+}
+.message{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+.message-header{
+    font-size: large;
+    font-weight: bold;
+    font-family: Times, "Times New Roman", Georgia, serif;
+    color: black;
+}

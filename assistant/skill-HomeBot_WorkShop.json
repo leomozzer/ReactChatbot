@@ -1,0 +1,791 @@
+{
+  "name": "HomeBot_WorkShop",
+  "intents": [
+    {
+      "intent": "saudacao",
+      "examples": [
+        {
+          "text": "Olá"
+        },
+        {
+          "text": "Oi"
+        },
+        {
+          "text": "Fala jow"
+        },
+        {
+          "text": "Eai"
+        },
+        {
+          "text": "Boa noite"
+        },
+        {
+          "text": "Bom dia"
+        },
+        {
+          "text": "Boa tarde"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "liga",
+      "examples": [
+        {
+          "text": "Liga"
+        },
+        {
+          "text": "liga as luzes da suite"
+        },
+        {
+          "text": "estou na sala, pode ligar as luzes pra mim"
+        },
+        {
+          "text": "se puder acionar as luzes da cozinha"
+        },
+        {
+          "text": "me vê uma luz na sala"
+        },
+        {
+          "text": "Está meio escuro aqui na sala"
+        },
+        {
+          "text": "Aciona a lâmpada da cozinha"
+        },
+        {
+          "text": "Liga as luzes da @comodos"
+        },
+        {
+          "text": "Preciso que você liga as luzes da @comodos e do @comodos"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "desliga",
+      "examples": [
+        {
+          "text": "desliga as luzes da suite"
+        },
+        {
+          "text": "Desliga"
+        },
+        {
+          "text": "Preciso que você desligue as luzes da @comodos e do @comodos"
+        },
+        {
+          "text": "Desliga as luzes da @comodos"
+        },
+        {
+          "text": "Desliga a lâmpada da sala"
+        },
+        {
+          "text": "As luzes da cozinha ainda não foram desligadas"
+        },
+        {
+          "text": "Pode desligar as luzes da suite"
+        },
+        {
+          "text": "tem muita claridade na cozinha, desliga as luzes pra mim"
+        },
+        {
+          "text": "vou descansar, pode desligar as luzes da sala"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "saudacao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Boa tarde",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Bom dia",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Boa noite",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "aparelhos",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "luzes",
+          "synonyms": [
+            "luz",
+            "lâmpadas"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "comodos",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "sala",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "garagem",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cozinha",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "banheiro",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "quarto",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "pt-br",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "response_condition",
+      "title": "response_5_1558977416480",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da @comodos ligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1554226510455",
+      "conditions": "@comodos:garagem && @aparelhos:luzes",
+      "dialog_node": "response_5_1558977416480",
+      "previous_sibling": "response_4_1558977401726"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_4_1558977401726",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes do @comodos ligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1554226510455",
+      "conditions": "@comodos:quarto && @aparelhos:luzes",
+      "dialog_node": "response_4_1558977401726",
+      "previous_sibling": "response_4_1558977385569"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_8_1554226742944",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da @comodos ligadas."
+              },
+              {
+                "text": "Certo, estou ligando as luzes da sala agora."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1554226510455",
+      "conditions": "@comodos:sala && @aparelhos:luzes",
+      "dialog_node": "response_8_1554226742944",
+      "previous_sibling": "response_6_1558975836831"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_1_1554226834402",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da @comodos ligadas."
+              },
+              {
+                "text": "Ok. As luzes da cozinha já estão sendo ligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1554226510455",
+      "conditions": "@comodos:cozinha && @aparelhos:luzes",
+      "dialog_node": "response_1_1554226834402",
+      "previous_sibling": "response_8_1554226742944"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_4_1558977385569",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes do @comodos ligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1554226510455",
+      "conditions": "@comodos:banheiro && @aparelhos:luzes",
+      "dialog_node": "response_4_1558977385569",
+      "previous_sibling": "response_1_1554226834402"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_6_1558975836831",
+      "output": {
+        "text": {
+          "values": [
+            "Foram ligadas as @aparelhos dos seguintes cômodos: <? entities['comodos'] ?>."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1554226510455",
+      "context": {},
+      "conditions": "@comodos.size()>1",
+      "dialog_node": "response_6_1558975836831"
+    },
+    {
+      "type": "standard",
+      "title": "captura de variáveis",
+      "output": {},
+      "parent": "node_10_1558977574680",
+      "conditions": "false",
+      "dialog_node": "node_11_1558977574680"
+    },
+    {
+      "type": "standard",
+      "parent": "node_8_1554226953499",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@comodos",
+      "dialog_node": "node_3_1554226985236"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1558977574678",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Em outros casos"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_13_1558977574680",
+      "previous_sibling": "node_10_1558977574680"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Desculpe, mas por enquanto só consigo desligar as luzes de algum cômodo quando informado. Ex: \"liga as luzes da suite\"."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1558977574678",
+      "context": {
+        "aparelho": "@aparelhos"
+      },
+      "conditions": "@aparelhos:luzes &&  !@comodos",
+      "dialog_node": "node_10_1558977574680",
+      "previous_sibling": "node_2_1558977574680"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_1_1558977574678",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@comodos && @aparelhos",
+      "dialog_node": "node_2_1558977574680"
+    },
+    {
+      "type": "standard",
+      "title": "captura de variáveis",
+      "parent": "node_7_1558975372984",
+      "conditions": "false",
+      "dialog_node": "node_8_1558975573476"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_4_1558977385569",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes do @comodos desligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558977574680",
+      "conditions": "@comodos:banheiro && @aparelhos:luzes",
+      "dialog_node": "response_7_1558977574680",
+      "previous_sibling": "response_6_1558977574680"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_8_1554226742944",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da @comodos desligadas."
+              },
+              {
+                "text": "Certo, estou ligando as luzes da sala agora."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558977574680",
+      "conditions": "@comodos:sala && @aparelhos:luzes",
+      "dialog_node": "response_5_1558977574680",
+      "previous_sibling": "response_3_1558977574680"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_5_1558977416480",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da @comodos desligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558977574680",
+      "conditions": "@comodos:garagem && @aparelhos:luzes",
+      "dialog_node": "response_9_1558977574680",
+      "previous_sibling": "response_8_1558977574680"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_4_1558977401726",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes do @comodos desligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558977574680",
+      "conditions": "@comodos:quarto && @aparelhos:luzes",
+      "dialog_node": "response_8_1558977574680",
+      "previous_sibling": "response_7_1558977574680"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_1_1554226834402",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da @comodos desligadas."
+              },
+              {
+                "text": "Ok. As luzes da cozinha já estão sendo ligadas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1558977574680",
+      "conditions": "@comodos:cozinha && @aparelhos:luzes",
+      "dialog_node": "response_6_1558977574680",
+      "previous_sibling": "response_5_1558977574680"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_6_1558975836831",
+      "output": {
+        "text": {
+          "values": [
+            "Foram desligadas as @aparelhos dos seguintes cômodos: <? entities['comodos'] ?>."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1558977574680",
+      "context": {},
+      "conditions": "@comodos.size()>1",
+      "dialog_node": "response_3_1558977574680"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_11_1558977574680",
+      "context": {
+        "comodo": "@comodos"
+      },
+      "conditions": "@comodos",
+      "dialog_node": "node_12_1558977574680"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_5_1554227033706",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da sala desligadas"
+              },
+              {
+                "text": "Já vou desliga-las pra você."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1554226985236",
+      "conditions": "@comodos:sala && @aparelhos:luzes",
+      "dialog_node": "response_5_1554227033706",
+      "previous_sibling": "response_8_1554226997872"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_9_1554227083349",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da cozinha desligadas."
+              },
+              {
+                "text": "Estou desligando agora mesmo."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1554226985236",
+      "conditions": "@comodos:cozinha && @aparelhos:luzes",
+      "dialog_node": "response_9_1554227083349",
+      "previous_sibling": "response_5_1554227033706"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_8_1554226997872",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Luzes da suite desligadas."
+              },
+              {
+                "text": "Tudo bem. Bom descanso."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1554226985236",
+      "conditions": "@comodos:suite && @aparelhos:luzes",
+      "dialog_node": "response_8_1554226997872"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_9_1558975263577",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, o que posso fazer por você hoje?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1558975190993",
+      "conditions": "anything_else",
+      "dialog_node": "response_9_1558975263577",
+      "previous_sibling": "response_6_1558975208357"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_6_1558975208357",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "@saudacao, em que posso ajudar hoje?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1558975190993",
+      "conditions": "@saudacao",
+      "dialog_node": "response_6_1558975208357"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Desculpe, mas por enquanto só consigo ligar as luzes de algum cômodo quando informado. \"Ex: liga as luzes da suite\""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1554226480288",
+      "context": {},
+      "conditions": "@aparelhos:luzes &&  !@comodos",
+      "dialog_node": "node_7_1558975372984",
+      "previous_sibling": "node_4_1554226510455"
+    },
+    {
+      "type": "standard",
+      "parent": "node_1_1554226480288",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Em outros casos"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_4_1555443749244",
+      "previous_sibling": "node_7_1558975372984"
+    },
+    {
+      "type": "standard",
+      "parent": "node_1_1554226480288",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@comodos && @aparelhos",
+      "dialog_node": "node_4_1554226510455"
+    },
+    {
+      "type": "standard",
+      "parent": "node_8_1558975573476",
+      "context": {
+        "comodo": "@comodos"
+      },
+      "conditions": "@comodos",
+      "dialog_node": "node_1_1558975617488"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_8_1554226953499"
+    },
+    {
+      "type": "standard",
+      "title": "Desliga as luzes do Cômodo",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "false",
+      "dialog_node": "node_8_1554226953499",
+      "previous_sibling": "node_1_1558977574678"
+    },
+    {
+      "type": "standard",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#saudacao",
+      "dialog_node": "node_4_1558975190993",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Liga Luzes do Cômodo",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#liga && intents[0].confidence > 0.9",
+      "dialog_node": "node_1_1554226480288",
+      "previous_sibling": "node_4_1558975190993"
+    },
+    {
+      "type": "standard",
+      "title": "Desliga as luzes do Cômodo",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#desliga && intents[0].confidence > 0.9",
+      "dialog_node": "node_1_1558977574678",
+      "previous_sibling": "node_1_1554226480288"
+    },
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, eu sou o HomeBot. Fui criado para ligar e desligar as luzes do banheiro, quarto, garagem, sala e da cozinha."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    }
+  ],
+  "workspace_id": "c56785a6-7639-4920-8784-0aea646d9019",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
