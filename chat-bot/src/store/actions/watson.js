@@ -38,7 +38,7 @@ export const conversaWatson = ((mensagem, contexto) =>{
                 }
                 dispatch(enviaMensagem(msg))//Dispara o uso da função enviaMensagem com o objeto msg
                 //verifica se a intenção liga está presente na resposta do watson
-                if(data.data.intents[0].intent === "liga"){//verifica se a intenção desliga está presente
+                if(data.data.intents[0].intent === "liga"){
                     if(data.data.entities.length > 2){
                         for(var i = 0; i < data.data.entities.length; i++){
                             if(data.data.entities[i].value === "banheiro"){

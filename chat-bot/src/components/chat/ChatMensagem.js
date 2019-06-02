@@ -45,7 +45,7 @@ class ChatMensagem extends Component{
                 <form onSubmit={this.handleSubmit} autoComplete='off'>
                     <br/>
                     <InputGroup>
-                        <Input name='myInput' onChange={this.inputEnviatexto} placeholder='Ex: Desliga as luzes da sala'/>
+                        <Input name='myInput' onChange={this.inputEnviatexto} placeholder='Ex: Liga as luzes da sala'/>
                         <InputGroupAddon addonType='append'>
                             <Button>
                                 Enviar
