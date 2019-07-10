@@ -1,7 +1,6 @@
-<h1>Domótica Utilizando Chatbot</h1>
+<h1>Controlando um arduino com Watson Assistant</h1>
 
 <h3>Tutorial deste projeto</h3>
-<b>Controlando um arduino com Watson Assistant</b><br/>
 https://medium.com/botsbrasil/controlando-um-arduino-com-watson-assistant-9237892d2745
 
 <h3>Pastas</h3>
